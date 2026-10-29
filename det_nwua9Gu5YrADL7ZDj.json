@@ -1,0 +1,3402 @@
+{
+  "data": {
+    "id": "nwua9Gu5YrADL7ZDj",
+    "userId": "R6HCFYaZNqjQA9ZWx",
+    "name": "crawler-google-places",
+    "username": "compass",
+    "description": "Extract data from thousands of Google Maps locations and businesses, including reviews, reviewer details, images, contact info, including full name, email, and job title, opening hours, prices & more. Export data, run via API, schedule and monitor runs, or integrate with other tools.",
+    "isPublic": true,
+    "createdAt": "2018-11-19T16:58:07.667Z",
+    "modifiedAt": "2026-10-29T13:22:18.500Z",
+    "taggedBuilds": {
+      "latest": {
+        "buildId": "JxGCvzeymJzQSz09l",
+        "finishedAt": "2026-10-29T12:56:37.690Z",
+        "buildNumberInt": 1400779,
+        "buildNumber": "0.14.779"
+      }
+    },
+    "stats": {
+      "totalBuilds": 4679,
+      "totalRuns": 45250153,
+      "totalUsers": 672580,
+      "lastRunStartedAt": "2026-10-29T20:26:34.977Z",
+      "totalUsers30Days": 46366,
+      "totalUsers7Days": 17275,
+      "totalUsers90Days": 87953,
+      "totalMetamorphs": 152571,
+      "publicActorRunStats30Days": {
+        "ABORTED": 28358,
+        "FAILED": 85811,
+        "SUCCEEDED": 3933535,
+        "TIMED-OUT": 48293,
+        "TOTAL": 4095997
+      },
+      "actorReviewCount": 1820,
+      "actorReviewRating": 4.7037761401572675,
+      "bookmarkCount": 5239
+    },
+    "versions": [
+      {
+        "versionNumber": "0.14",
+        "sourceType": "GIT_REPO",
+        "buildTag": "latest"
+      },
+      {
+        "versionNumber": "0.99",
+        "sourceType": "GIT_REPO",
+        "buildTag": null
+      }
+    ],
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 604800,
+      "memoryMbytes": 4096
+    },
+    "exampleRunInput": {
+      "body": "{\n  \"searchString\": \"Pubs near Prague 2\",\n  \"proxyConfig\": {\n    \"useApifyProxy\": true\n  },\n  \"maxCrawledPlaces\": 5\n}",
+      "contentType": "application/json; charset=utf-8"
+    },
+    "categories": [
+      "LEAD_GENERATION",
+      "TRAVEL"
+    ],
+    "isDeprecated": false,
+    "title": "Google Maps Scraper",
+    "pictureUrl": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/R6HCFYaZNqjQA9ZWx-actor-nwua9Gu5YrADL7ZDj-RezQPpuC3C-Google_Maps_Search.png",
+    "seoTitle": "📍 Google Maps Scraper",
+    "seoDescription": "Extract data from any place on Google Maps. Get addresses, contact details, business leads with emails and job titles, reviews, prices, menus, coordinates, images, popular times, and more.",
+    "pricingInfos": [
+      {
+        "pricingModel": "PAY_PER_EVENT",
+        "reasonForChange": "To make pricing transparent and predictable based on your actual usage. This change will also allow us to significantly speed up the Actor.",
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat fee for starting an Actor run. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventPriceUsd": 0.007
+            },
+            "place-scraped": {
+              "eventTitle": "Place scraped",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventPriceUsd": 0.004,
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventPriceUsd": 0.001
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventPriceUsd": 0.002
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventPriceUsd": 0.002
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventPriceUsd": 0.005
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventPriceUsd": 0.0005
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventPriceUsd": 0.0005
+            }
+          }
+        },
+        "startedAt": "2025-03-31T00:00:00.000Z",
+        "minimalMaxTotalChargeUsd": 0.5,
+        "createdAt": "2025-03-17T15:47:58.572Z",
+        "apifyMarginPercentage": 0,
+        "notifiedAboutFutureChangeAt": "2025-03-17T15:49:23.472Z",
+        "notifiedAboutChangeAt": "2025-03-31T00:35:19.764Z"
+      },
+      {
+        "pricingModel": "PAY_PER_EVENT",
+        "reasonForChange": "We are introducing Store pricing discounts for this Actor; more info in the follow-up email.",
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat fee for starting an Actor run. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00525
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003675
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002205
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001323
+                }
+              }
+            },
+            "place-scraped": {
+              "eventTitle": "Place scraped",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0021
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            }
+          }
+        },
+        "minimalMaxTotalChargeUsd": 0.5,
+        "createdAt": "2025-05-26T13:22:25.453Z",
+        "startedAt": "2025-05-26T13:22:25.453Z",
+        "apifyMarginPercentage": 0,
+        "notifiedAboutChangeAt": "2025-05-26T13:35:17.744Z"
+      },
+      {
+        "pricingModel": "PAY_PER_EVENT",
+        "reasonForChange": "We are introducing Store pricing discounts for this Actor; more info in the follow-up email.",
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat fee for starting an Actor run. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00525
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003675
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002205
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001323
+                }
+              }
+            },
+            "place-scraped": {
+              "eventTitle": "Place scraped",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0021
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details.</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            }
+          }
+        },
+        "minimalMaxTotalChargeUsd": 0.5,
+        "createdAt": "2025-10-01T00:38:14.776Z",
+        "startedAt": "2025-10-01T00:38:14.776Z",
+        "apifyMarginPercentage": 0.2,
+        "notifiedAboutChangeAt": "2025-05-26T13:35:17.744Z"
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat fee for starting an Actor run. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00525
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003675
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002205
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001323
+                }
+              }
+            },
+            "place-scraped": {
+              "eventTitle": "Place scraped",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0021
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2025-10-08T16:03:47.635Z",
+        "startedAt": "2025-10-08T16:03:47.635Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat fee for starting an Actor run. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00525
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003675
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002205
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001323
+                }
+              }
+            },
+            "place-scraped": {
+              "eventTitle": "Place scraped",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0021
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment (coming soon)",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2025-11-11T12:27:15.024Z",
+        "startedAt": "2025-11-11T12:27:15.024Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat fee for starting an Actor run. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00525
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003675
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002205
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001323
+                }
+              },
+              "isOneTimeEvent": true
+            },
+            "place-scraped": {
+              "eventTitle": "Place scraped",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0021
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment (coming soon)",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2025-11-24T14:40:37.556Z",
+        "startedAt": "2025-11-24T14:40:37.556Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat fee for starting an Actor run. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": true,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00525
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003675
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002205
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001323
+                }
+              }
+            },
+            "place-scraped": {
+              "eventTitle": "Place scraped",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0021
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2025-12-09T16:42:47.973Z",
+        "startedAt": "2025-12-09T16:42:47.973Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "place-scraped": {
+              "eventTitle": "Place scraped",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0021
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.000375
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0002625
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00005
+            }
+          }
+        },
+        "createdAt": "2026-02-17T15:06:07.785Z",
+        "startedAt": "2026-02-17T15:06:07.785Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "place-scraped": {
+              "eventTitle": "Place scraped",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0021
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00005
+            }
+          }
+        },
+        "createdAt": "2026-02-17T17:51:27.660Z",
+        "startedAt": "2026-02-17T17:51:27.660Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "place-scraped": {
+              "eventTitle": "Scraped place",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0021
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00005
+            }
+          }
+        },
+        "createdAt": "2026-02-23T13:04:07.249Z",
+        "startedAt": "2026-02-23T13:04:07.249Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "place-scraped": {
+              "eventTitle": "Scraped place",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0021
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "lead-email-verified": {
+              "eventTitle": "Add-on: Email verification",
+              "eventDescription": "Cost per decisive email verification (valid, invalid, or disposable). You are not charged for catch-all, unknown, or error results.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0012
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00005
+            }
+          }
+        },
+        "createdAt": "2026-04-29T12:06:49.146Z",
+        "startedAt": "2026-04-29T12:06:49.146Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": false,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "place-scraped": {
+              "eventTitle": "Scraped place",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "lead-email-verified": {
+              "eventTitle": "Add-on: Email verification",
+              "eventDescription": "Cost per decisive email verification (valid, invalid, or disposable). You are not charged for catch-all, unknown, or error results.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0012
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00005
+            }
+          }
+        },
+        "createdAt": "2026-06-01T17:40:10.535Z",
+        "startedAt": "2026-06-01T17:40:10.535Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "place-scraped": {
+              "eventTitle": "Scraped place",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "lead-email-verified": {
+              "eventTitle": "Add-on: Email verification",
+              "eventDescription": "Cost per decisive email verification (valid, invalid, or disposable). You are not charged for catch-all, unknown, or error results.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0012
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00005
+            },
+            "competitor-analysis": {
+              "eventTitle": "Single Competitor AI Analysis",
+              "eventDescription": "Cost per competitor analyzed as part of the Competitive Intelligence add-on. Each competitor receives an AI-powered profile covering strengths, weaknesses, and review-backed claims. All analyzed competitors are ranked together in a final comparative report stored in the dedicated Competitive Intelligence dataset.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.025
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.02
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.018
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.016
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.015
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.013
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2026-06-22T13:35:20.081Z",
+        "startedAt": "2026-06-22T13:35:20.081Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "place-scraped": {
+              "eventTitle": "Scraped place",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "lead-email-verified": {
+              "eventTitle": "Add-on: Email verification",
+              "eventDescription": "Cost per decisive email verification (valid, invalid, or disposable). You are not charged for catch-all, unknown, or error results.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0012
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "competitor-analyzed": {
+              "eventTitle": "Single Competitor AI Analysis",
+              "eventDescription": "Cost per competitor analyzed as part of the Competitive Intelligence add-on. Each competitor receives an AI-powered profile covering strengths, weaknesses, and review-backed claims. All analyzed competitors are ranked together in a final comparative report stored in the dedicated Competitive Intelligence dataset.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.025
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.02
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.018
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.016
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.015
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.013
+                }
+              }
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00005
+            }
+          }
+        },
+        "createdAt": "2026-06-22T13:50:57.931Z",
+        "startedAt": "2026-06-22T13:50:57.931Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.5,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": false,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "place-scraped": {
+              "eventTitle": "Scraped place",
+              "eventDescription": "Cost per place successfully scraped from Google Maps. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00126
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000756
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "filter-applied": {
+              "eventTitle": "Add-on: Filter applied",
+              "eventDescription": "Extra cost per place for each filter applied (e.g. category, title match, minimum stars, website availability, or skipping closed places). Final price = places scraped * filter price * number of filters. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00075
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.000525
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.000315
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000189
+                }
+              }
+            },
+            "place-details-scraped": {
+              "eventTitle": "Add-on: Additional place details scraped",
+              "eventDescription": "Flat cost per place to retrieve additional place details (e.g. table reservation data, web results, or max questions). The price remains the same no matter how many details you select. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "contact-details-scraped": {
+              "eventTitle": "Add-on: Company contacts enrichment",
+              "eventDescription": "Extra cost per place for finding the associated web page and extracting contact information (e.g. social media accounts or company email). <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00105
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.00063
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.000378
+                }
+              }
+            },
+            "lead-scraped": {
+              "eventTitle": "Add-on: Business leads enrichment",
+              "eventDescription": "Cost per successfully extracted business lead. Get key prospect details: full name, work email, phone number, job title, and LinkedIn profile. Enable the 'scrape places with website' filter to only show places that have an active website. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "lead-email-verified": {
+              "eventTitle": "Add-on: Email verification",
+              "eventDescription": "Cost per decisive email verification (valid, invalid, or disposable). You are not charged for catch-all, unknown, or error results.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0012
+                }
+              }
+            },
+            "social-profile-scraped": {
+              "eventTitle": "Add-on: Social media profile enrichment",
+              "eventDescription": "Flat cost per 1,000 social media profiles enriched with detailed data (e.g., follower counts, profile name, description). This price applies to the total number of profiles enriched, regardless of how many different platforms (Facebook, TikTok, etc.) you select.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.1
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.008
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.003
+                }
+              }
+            },
+            "review-scraped": {
+              "eventTitle": "Add-on: Review scraped",
+              "eventDescription": "Extra cost per individual review scraped. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "image-scraped": {
+              "eventTitle": "Add-on: Image scraped",
+              "eventDescription": "Extra cost per image retrieved from a place, including author details. <a href=\"https://help.apify.com/en/articles/10774732-google-maps-scraper-is-going-to-pay-per-event-pricing\">More details</a>",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00037
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.00026
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0001575
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0000945
+                }
+              }
+            },
+            "competitor-analyzed": {
+              "eventTitle": "Single Competitor AI Analysis",
+              "eventDescription": "Cost per competitor analyzed as part of the Competitor analysis add-on. Each competitor receives an AI-powered profile covering strengths, weaknesses, and review-backed claims. All analyzed competitors are ranked together in a final comparative report stored in the dedicated dataset.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.025
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.02
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.018
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.016
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.015
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.013
+                }
+              }
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00005
+            }
+          }
+        },
+        "createdAt": "2026-06-30T13:23:33.247Z",
+        "startedAt": "2026-06-30T13:23:33.247Z",
+        "apifyMarginPercentage": 0.2
+      }
+    ],
+    "notice": "NONE",
+    "isCritical": true,
+    "isGeneric": false,
+    "hasNoDataset": false,
+    "isSourceCodeHidden": true,
+    "standbyUrl": null,
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "readmeSummary": "## Google Maps Scraper\n\nGoogle Maps Scraper extracts structured business data from Google Maps by automating the Maps UI: it runs searches, scrolls result lists, enqueues place detail pages and scrapes detailed place profiles into rich structured records. Outputs include business names, addresses, precise coordinates, phone numbers, websites, company contact data scraped from websites (including legal Impressum details when present), enriched lead records (full names, job titles, LinkedIn profiles, work emails when available), social media profiles with follower/verification metadata, ratings and review data (counts, per-review text and metadata, review distributions and detailed ratings), images and image metadata, opening hours, popular times histograms and live occupancy, menus, price bracket, reservation and booking links, hotel- and restaurant-specific metadata, lists of businesses inside indoor venues, additional semantic tags and attributes, and optional AI-powered competitor-analysis reports and interactive map visualizations. Technical capabilities include flexible search strategies (keyword and category searches, direct place URLs/IDs, and geospatial search areas defined with GeoJSON geometries such as polygons, multipolygons, or point+radius), full place-detail scraping, optional company-contact and social-profile enrichment, optional email verification, and review extraction at scale with per-review or per-place output formats.\n\n## Use cases\n\n- Generate qualified leads by extracting business contact details, websites, emails, and phone numbers\n- Track competitors across regions to monitor presence, ratings, and review trends\n- Perform market analysis to assess saturation, identify service gaps, and benchmark local businesses by size, rating, and visibility\n- Support partnerships by discovering top-rated or high-volume locations for outreach\n- Automate research workflows to replace manual Google Maps searches and keep datasets up to date\n- Extract and analyze Google reviews including per-review text, ratings, timestamps, and reviewer metadata\n- Enrich place records with company contacts, Impressum data, social media profiles, and verified email checks\n- Produce AI-powered competitor analysis reports and interactive map visualizations for comparative benchmarking",
+    "deploymentKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCgIaYhSbMB2+iD/3o3jJXfLjMLwmnp32J2VJjnoy8staOCYcYMJsU5Nl3pt62oP67rduIyCgBp6hO7guAVRQPDHSo6yq9m5jZgXaWUnO1GHVq89aQN5lHGKpEPLSo2tCw+qtCj1+XfHtAKsihnunaOkSuSgL+g2y4i1W7/MrdKAcG4m7Uq7QEXOnaoMAe2bCcdsrcwouuG0DngGxk6snOecxuDF00M8PY57hjVTaUVvwGsXCsahyDQDEF26DGJ0hIqCDGrMcDDHRnQTLuqdo3UsPmjPmFRATRYldOV4wvbmE/3XJiXLfubt3WLVv8EtKKh/HcCdg7o89IfMnRHLg01 \n"
+  }
+}

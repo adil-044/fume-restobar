@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fume RestoBar — Smoke. Fire. The craft of dinner. Brantford</title>
+<meta name="description" content="Fume RestoBar · 150 Morrell St, Brantford ON · Greek-fusion dining, fire & smoke, craft cocktails and wine · 4.6★ on Google · Reservations via Tock" />
+<meta property="og:title" content="Fume RestoBar — Brantford" />
+<meta property="og:description" content="Smoke, fire & the craft of an evening. Greek-fusion kitchen, craft cocktails, wine bar. 4.6★ · 518 reviews." />
+<meta property="og:image" content="assets/hero-main.jpg" />
+<meta name="theme-color" content="#0b0c0e" />
+<link rel="icon" href="assets/logo-md.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --coal:#0b0c0e; --espresso:#141014; --smoke:#1d1815; --ink:#111014;
+    --ivory:#f4eee6; --cream:#e9e0d2; --gold:#c8a24a; --ember:#c0391f; --muted:#8d8578; --line:rgba(244,238,230,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--coal);color:var(--ivory);font-family:"Inter",sans-serif;font-weight:400;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold);color:#0b0c0e}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  .serif{font-family:"Cormorant Garamond",serif}
+
+  /* ————— preloader ————— */
+  #preload{position:fixed;inset:0;background:var(--coal);z-index:99;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s}
+  #preload img{width:180px;opacity:0;animation:prepulse 1.4s ease forwards}
+  @keyframes prepulse{0%{opacity:0;transform:scale(.7)}55%{opacity:1;transform:scale(1)}100%{opacity:1}}
+
+  /* ————— nav ————— */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 4.5rem;height:84px;background:rgba(11,12,14,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transform:translateY(-100%);transition:transform .7s ease}
+  header.on{transform:translateY(0)}
+  .brand{display:flex;align-items:center;gap:.9rem}
+  .brand img{height:34px;width:auto}
+  .brand .mark{font-size:11px;letter-spacing:.34em;color:var(--muted);text-transform:uppercase}
+  nav ul{display:flex;gap:2.2rem;list-style:none}
+  nav a{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ivory);transition:color .25s;position:relative}
+  nav a:hover{color:var(--gold)}
+  nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:var(--gold);transition:right .35s}
+  nav a:hover::after{right:0}
+  .cta{display:inline-block;padding:.9rem 1.6rem;background:var(--gold);color:#0b0c0e;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;transition:transform .25s,background .25s}
+  .cta:hover{transform:translateY(-1px);background:#d9b761}
+
+  /* ————— hero ————— */
+  .hero{position:relative;min-height:100vh;overflow:hidden}
+  .hero .bg{position:absolute;inset:-12% 0;background:url("assets/hero-main.jpg") center/cover no-repeat;transform:translateZ(0);will-change:transform}
+  .hero .shade{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 20%, rgba(11,12,14,.42), rgba(11,12,14,.8) 78%), linear-gradient(180deg, rgba(11,12,14,.4), transparent 40%, rgba(11,12,14,.62) 100%)}
+  .hero .kicker{position:absolute;top:150px;left:0;right:0;text-align:center;font-size:12px;letter-spacing:.46em;text-transform:uppercase;color:var(--cream);opacity:0;transform:translateY(24px);transition:all .9s ease .2s}
+  .hero .title{position:absolute;top:38%;left:0;right:0;text-align:center;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(52px,7.6vw,104px);line-height:.98;color:var(--ivory);opacity:0;transform:translateY(30px);transition:all 1s ease .45s}
+  .hero .title em{font-style:italic;color:var(--gold)}
+  .hero .sub{position:absolute;top:66%;left:0;right:0;text-align:center;max-width:620px;margin:0 auto;font-size:15.5px;line-height:1.7;color:var(--cream);opacity:0;transform:translateY(22px);transition:all 1s ease .7s}
+  .hero .acts{position:absolute;top:76%;left:0;right:0;text-align:center;display:flex;gap:1rem;justify-content:center;opacity:0;transform:translateY(18px);transition:all .9s ease .9s}
+  .hero .acts .ghost{display:inline-block;padding:.9rem 1.6rem;border:1px solid var(--ivory);color:var(--ivory);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;transition:all .25s}
+  .hero .acts .ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .hero .stats{position:absolute;bottom:36px;left:0;right:0;display:flex;gap:3.4rem;justify-content:center;align-items:baseline;font-size:13px;color:var(--muted);letter-spacing:.06em;opacity:0;transition:all 1s ease 1.1s}
+  .hero .stats b{display:block;font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--gold)}
+  .hero .stats .st{text-align:center}
+  .scroll-hint{position:absolute;right:42px;bottom:30px;width:26px;height:40px;border:1.5px solid var(--muted);border-radius:13px;opacity:0;transition:opacity .8s ease 1.3s}
+  .scroll-hint::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;background:var(--gold);border-radius:2px;transform:translateX(-50%);animation:sroll 1.4s ease infinite}
+  @keyframes sroll{0%{top:7px}100%{top:23px}}
+
+  /* marquee */
+  .marquee{overflow:hidden;background:var(--coal);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.05rem 0;white-space:nowrap}
+  .marquee .track{display:inline-block;animation:marq 26s linear infinite;font-family:"Cormorant Garamond",serif;font-size:19px;letter-spacing:.22em;color:var(--gold)}
+  .marquee .track em{color:var(--ember);font-size:15px;vertical-align:middle;margin:0 .7em}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ————— story ————— */
+  section{padding:0 4.5rem}
+  .sec-head{padding:8.5rem 0 1rem;max-width:760px}
+  .sec-eyebrow{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold)}
+  .sec-title{font-family:"Cormorant Garamond",serif;font-size:clamp(30px,3.9vw,54px);color:var(--ivory);font-weight:500;margin-top:1rem}
+  .story{display:grid;grid-template-columns:1.05fr 1fr;gap:4.5rem;align-items:center;padding:4rem 0 7rem}
+  .story .imgs{position:relative}
+  .story .imgs > img{border-radius:4px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .story .imgs::after{content:"";position:absolute;inset:0;border:1px solid rgba(200,162,74,.35);border-radius:4px;top:-14px;left:-14px;right:-14px;bottom:-14px}
+  .story .imgs .photo{position:absolute;left:72%;bottom:0;width:32%;border-radius:50%}
+  .story .copy p{font-size:15.5px;line-height:1.85;color:var(--cream);margin:0 0 1.4rem}
+  .story .copy .lead{font-family:"Cormorant Garamond",serif;font-size:21px;font-style:italic;color:var(--ivory);line-height:1.5}
+  .story .tags{display:flex;gap:1.1rem;margin-top:2.2rem;flex-wrap:wrap}
+  .story .tags span{border:1px solid var(--line);border-radius:999px;padding:.45rem 1.1rem;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+  /* ————— menu ————— */
+  .menu-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.4rem;padding:3rem 0 2rem}
+  .mcard{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5;cursor:pointer}
+  .mcard img{width:100%;height:100%;object-fit:cover;transition:transform .9s ease}
+  .mcard:hover img{transform:scale(1.07)}
+  .mcard .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent,rgba(11,12,14,.94));padding:.9rem .8rem;text-align:left}
+  .mcard .cap .n{font-family:"Cormorant Garamond",serif;font-size:19px;color:var(--ivory);line-height:1.05}
+  .mcard .cap .p{font-size:12.5px;color:var(--gold);margin-top:.25rem}
+  .mcard .cap .d{font-size:10.5px;color:var(--muted);line-height:1.35;margin-top:.3rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .menu-note{padding:1.4rem 0 4rem;max-width:640px;font-size:13px;color:var(--muted);line-height:1.7}
+
+  /* ————— gallery ————— */
+  .gal{column-count:4;column-gap:1.1rem;padding:3rem 0 4rem}
+  .gal figure{border-radius:4px;overflow:hidden;margin:0 0 1.1rem;break-inside:avoid;cursor:zoom-in;position:relative}
+  .gal figure img{width:100%;transition:transform .8s ease;filter:saturate(.94)}
+  .gal figure:hover img{transform:scale(1.06)}
+  .gal figure::after{content:"";position:absolute;inset:0;background:rgba(11,12,14,.28);opacity:0;transition:opacity .4s}
+  .gal figure:hover::after{opacity:1}
+
+  /* lightbox */
+  #lb{position:fixed;inset:0;background:rgba(8,9,10,.94);z-index:98;display:none;align-items:center;justify-content:center}
+  #lb img{max-height:92vh;max-width:92vw;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+  #lb .x{position:fixed;top:26px;right:34px;color:var(--ivory);font-size:30px;cursor:pointer;z-index:99}
+
+  /* ————— reviews ————— */
+  .rev-band{padding:7rem 4.5rem 3rem;background:linear-gradient(180deg,var(--coal),#0e0f11)}
+  .rev-band .big{font-family:"Cormorant Garamond",serif;font-size:76px;color:var(--gold);line-height:1}
+  .rev-band .sub{font-size:13px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-top:.4rem}
+  .rev-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding:3rem 4.5rem 0}
+  .rcard{background:rgba(20,16,20,.72);border:1px solid var(--line);border-radius:6px;padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:.9rem}
+  .rcard .stars{color:var(--gold);letter-spacing:.2em;font-size:13px}
+  .rcard p{font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.6;color:var(--cream)}
+  .rcard .who{font-size:11.5px;color:var(--muted);letter-spacing:.08em}
+  .rcard .who b{color:var(--ivory)}
+  .rev-foot{padding:2.5rem 4.5rem 1rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+  .rev-foot .gg{border:1px solid var(--gold);border-radius:999px;padding:.5rem 1.2rem;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+
+  /* ————— visit ————— */
+  .visit{padding:8rem 4.5rem 6rem;background:var(--espresso)}
+  .visit .cols{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+  .vcard+.vcard{margin:0}
+  .vtitle{font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--ivory);margin-bottom:1.2rem}
+  .vbody{font-size:14.5px;color:var(--cream);line-height:1.9}
+  .vbody a{color:var(--gold);border-bottom:1px solid rgba(200,162,74,.35)}
+  .vbody .big{font-size:17px}
+  table.hours{width:100%;border-collapse:collapse;font-size:13.5px;color:var(--cream);margin-top:.6rem}
+  .hours td{padding:.55rem .9rem;border-bottom:1px solid var(--line)}
+  .hours td:last-child{text-align:right;color:var(--gold)}
+  .mapwrap{position:relative;padding-top:56.25%;border:1px solid var(--line);border-radius:6px}
+  .mapwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.9) invert(.92) contrast(.86)}
+
+  /* ————— footer ————— */
+  footer{background:var(--coal);padding:3.4rem 4.5rem 2.4rem;border-top:1px solid var(--line)}
+  footer .rows{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.4rem}
+  footer img.logo{height:30px;width:auto}
+  footer .soc a{color:var(--muted);letter-spacing:.18em;text-transform:uppercase;font-size:11.5px;margin-right:1rem;transition:color .25s}
+  footer .soc a:hover{color:var(--gold)}
+  footer .c{font-size:11px;color:var(--muted);letter-spacing:.06em;margin-top:1.6rem}
+
+  /* reveal */
+  [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+  [data-reveal].in{opacity:1;transform:none}
+  [data-reveal-l]{opacity:0;transform:translateX(-30px);transition:all .9s ease}
+  [data-reveal-l].in{opacity:1;transform:none}
+  [data-reveal-r]{opacity:0;transform:translateX(30px);transition:all .9s ease}
+  [data-reveal-r].in{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    header{padding:0 1.4rem;height:68px}
+    nav{display:none}
+    section,.rev-band,.rev-cards,.rev-foot,.visit,footer{padding-left:1.4rem;padding-right:1.4rem}
+    .story,.visit .cols{grid-template-columns:1fr}
+    .menu-grid{grid-template-columns:repeat(2,1fr)}
+    .rev-cards{grid-template-columns:1fr}
+    .gal{column-count:2}
+    .hero .title{font-size:44px}
+  }
+</style>
+</head>
+<body>
+
+<div id="preload"><img src="assets/logo-md.png" alt="Fume RestoBar" /></div>
+
+<header class="" id="nav">
+  <div class="brand"><img src="assets/logo.png" alt="Fume RestoBar" /><span class="mark">Brantford · Holmedale</span></div>
+  <nav>
+    <ul>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </nav>
+  <a class="cta" href="https://www.exploretock.com/fume-restobar-brantford" target="_blank" rel="noopener">Reserve a table</a>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero" id="top">
+    <div class="bg"></div>
+    <div class="shade"></div>
+    <div class="kicker">150 Morrell St · Brantford · Est. 2018</div>
+    <h1 class="title">Smoke, fire &amp; the<br />craft of an <em>evening.</em></h1>
+    <p class="sub">Smoked pork belly with honey dijon. Steak frites under cowboy butter. Whipped feta with spicy bomba honey — poured at the bar, and playing reggae after dark.</p>
+    <div class="acts">
+      <a class="cta" href="https://www.exploretock.com/fume-restobar-brantford" target="_blank" rel="noopener">Reserve</a>
+      <a class="ghost" href="#menu">View the menu</a>
+    </div>
+    <div class="stats">
+      <div class="st"><b>4.6</b>google rating</div>
+      <div class="st"><b>518</b>google reviews</div>
+      <div class="st"><b>Fire</b>kitchen &amp; bar</div>
+      <div class="st"><b>Wine</b>· cocktails</div>
+    </div>
+    <div class="scroll-hint"></div>
+  </div>
+
+  <div class="marquee">
+    <div class="track">
+      <span>SMOKED &amp; FIRED<em>✦</em>GREEK FUSION<em>✦</em>CRAFT COCKTAILS<em>✦</em>WINE BAR<em>✦</em>GLUTEN-FREE WITH CARE<em>✦</em></span>
+      <span>SMOKED &amp; FIRED<em>✦</em>GREEK FUSION<em>✦</em>CRAFT COCKTAILS<em>✦</em>WINE BAR<em>✦</em>GLUTEN-FREE WITH CARE<em>✦</em></span>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="sec-head" data-reveal>
+      <div class="sec-eyebrow">The place</div>
+      <h2 class="sec-title">A neighbourhood hangout that grew up into a destination.</h2>
+    </div>
+    <div class="story">
+      <div class="imgs" data-reveal-l>
+        <img src="assets/story-1.jpg" alt="Fume RestoBar coffee service" />
+        <img class="photo" src="assets/dish-1.jpg" alt="At the pass — Fume kitchen" />
+      </div>
+      <div class="copy" data-reveal-r>
+        <p class="lead">"Reinventing the neighbourhood hangout — one flame at a time."</p>
+        <p>In Brantford's Holmedale, Fume built its kitchen around the two things you can't fake: <b>fire</b> and <b>smoke</b>. Smoked pork belly gets honey dijon and pickled fennel; sirloin gets cowboy butter; feta gets whipped and blasted with spicy bomba honey.</p>
+        <p>The room is small by design — exposed brick, flicker from the pass, music that warms up as the evening does. Greek fusion at the table, a wine list and bar worth the evening, and gluten-free handled with actual excellence.</p>
+        <div class="tags">
+          <span>Greek fusion</span><span>Wood-fired</span><span>Craft cocktails</span><span>Wine bar</span><span>Gluten-free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="sec-head" data-reveal>
+      <div class="sec-eyebrow">From the pass</div>
+      <h2 class="sec-title">Signatures, straight off tonight's menu.</h2>
+    </div>
+    <div class="menu-grid">
+      <div class="mcard" data-reveal><img src="assets/guest-03.jpg" alt="Fume Burger"><div class="cap"><div class="n">Fume Burger</div><div class="p">$27</div><div class="d">1/2 lb house patty · smoked cheddar · arugula · "Ella" sauce · fries</div></div></div>
+      <div class="mcard" data-reveal><img src="assets/guest-07.jpg" alt="Steak frites"><div class="cap"><div class="n">Steak Frites</div><div class="p">$42</div><div class="d">8oz grass-fed sirloin · Fume cowboy butter · portobello · fries</div></div></div>
+      <div class="mcard" data-reveal><img src="assets/guest-11.jpg" alt="Whipped feta"><div class="cap"><div class="n">Whipped Feta</div><div class="p">$18</div><div class="d">whipped feta &amp; goat cheese · bomba honey · pomegranate · sourdough</div></div></div>
+      <div class="mcard" data-reveal><img src="assets/guest-15.jpg" alt="Calamari"><div class="cap"><div class="n">Calamari</div><div class="p">$20</div><div class="d">pepperoncini · roasted peppers · lemon aioli</div></div></div>
+      <div class="mcard" data-reveal><img src="assets/guest-19.jpg" alt="Beef tenderloin"><div class="cap"><div class="n">Beef Tenderloin</div><div class="p">$59</div><div class="d">8oz sous-vide · blue cheese · garlic mash · seasonal veg</div></div></div>
+      <div class="mcard" data-reveal><img src="assets/guest-22.jpg" alt="Tuna poke bowl"><div class="cap"><div class="n">Tuna Poke Bowl</div><div class="p">$30</div><div class="d">tuna loin · avocado · pickled ginger · wasabi aioli · sushi rice</div></div></div>
+    </div>
+    <p class="menu-note" data-reveal>The menu changes with the seasons and the smoke. Full lunch &amp; dinner menus are one tap away — gluten-free and vegetarian handled throughout, and your server will always confirm allergies.</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="sec-head" data-reveal>
+      <div class="sec-eyebrow">The room &amp; the plates</div>
+      <h2 class="sec-title">Shot by guests, served nightly.</h2>
+    </div>
+    <div class="gal">
+      <figure data-reveal><img src="assets/guest-00.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/hero-alt.jpg" alt="Fume dining room"></figure>
+      <figure data-reveal><img src="assets/guest-04.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/dish-2.jpg" alt="Fume plate"></figure>
+      <figure data-reveal><img src="assets/guest-09.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/guest-10.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/dish-3.jpg" alt="Fume plate"></figure>
+      <figure data-reveal><img src="assets/guest-13.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/story-2.jpg" alt="Fume espresso service"></figure>
+      <figure data-reveal><img src="assets/guest-01.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/guest-05.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/guest-18.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/guest-20.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/guest-06.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/guest-08.jpg" alt="Fume guest photo"></figure>
+      <figure data-reveal><img src="assets/guest-23.jpg" alt="Fume guest photo"></figure>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <div class="rev-band" id="reviews">
+    <div data-reveal>
+      <div class="sec-eyebrow">What the room says</div>
+      <div class="big serif">4.6</div>
+      <div class="sub">★ · 518 Google reviews · Brantford</div>
+    </div>
+    <div class="rev-cards">
+      <div class="rcard" data-reveal>
+        <div class="stars">★★★★★</div>
+        <p>"The food is the star of this place — the menu has something for every craving, and drinks are crafted with real care."</p>
+        <div class="who"><b>Dylan M.</b> · Google</div>
+      </div>
+      <div class="rcard" data-reveal>
+        <div class="stars">★★★★★</div>
+        <p>"One of the best meals I have had in a long time. From start to finish our server was on it — highly recommend coming here!"</p>
+        <div class="who"><b>Sam A.</b> · Google</div>
+      </div>
+      <div class="rcard" data-reveal>
+        <div class="stars">★★★★★</div>
+        <p>"This place is what the young folks call 'bussin'. Food was absolutely fantastic and the service was even better. Great vibe."</p>
+        <div class="who"><b>Justin M.</b> · Google</div>
+      </div>
+      <div class="rcard" data-reveal>
+        <div class="stars">★★★★★</div>
+        <p>"The owner is very accommodating and inviting, and makes beautiful drinks pairing fabulous entrées."</p>
+        <div class="who"><b>Fran B.</b> · Google</div>
+      </div>
+    </div>
+    <div class="rev-foot" data-reveal>
+      <span class="gg">Loved by guests</span>
+      <span style="font-size:12.5px;color:var(--muted)">45 recent reviews pulled for this rebuild — every word real, every star earned.</span>
+      <a class="ghost" style="margin-left:auto" href="https://g.page/fumerestobar" target="_blank" rel="noopener">Read all 518 on Google</a>
+    </div>
+  </div>
+
+  <!-- VISIT -->
+  <div class="visit" id="visit">
+    <div class="sec-head" data-reveal>
+      <div class="sec-eyebrow">Come hungry</div>
+      <h2 class="sec-title">Find us in Holmedale.</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <div class="vtitle">Hours</div>
+        <table class="hours">
+          <tr><td>Wednesday</td><td>11:30–2 · 5–9</td></tr>
+          <tr><td>Thursday</td><td>11:30–2 · 5–9</td></tr>
+          <tr><td>Friday</td><td>11:30–2 · 5–10</td></tr>
+          <tr><td>Saturday</td><td>5:00–10</td></tr>
+        </table>
+        <div class="vtitle" style="margin-top:2rem">Contact</div>
+        <p class="vbody big"><a href="tel:+15488803863">548-880-FUME (3863)</a><br /><a href="mailto:info@fumerestobar.ca">info@fumerestobar.ca</a></p>
+        <p class="vbody" style="margin-top:.8rem">150 Morrell St<br />Brantford, ON N3T 4K2</p>
+        <p class="vbody" style="margin-top:1.4rem"><a href="https://www.exploretock.com/fume-restobar-brantford" target="_blank" rel="noopener">Reservations — Explore Tock</a><br /><a href="https://app.squareup.com/gift/MLHMQTWSMY8JC/order" target="_blank" rel="noopener">Gift cards</a></p>
+      </div>
+      <div class="mapwrap" data-reveal-r>
+        <iframe title="Fume RestoBar on Google Maps" loading="lazy" src="https://www.google.com/maps?q=150+Morrell+St,+Brantford,+ON+N3T+4K2&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="rows">
+    <img class="logo" src="assets/logo.png" alt="Fume RestoBar" />
+    <nav>
+      <ul>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="soc">
+      <a href="https://www.instagram.com/fumerestobar/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/fumerestobar/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+  <p class="c">© 2026 Fume RestoBar · 150 Morrell St, Brantford · Smoke. Fire. The craft of dinner.</p>
+</footer>
+
+<div id="lb"><span class="x" id="lbclose">×</span><img id="lbimg" src="" alt="" /></div>
+
+<script>
+  /* preloader */
+  addEventListener("load", () => setTimeout(() => {
+    const p = document.getElementById("preload");
+    p.style.opacity = "0"; setTimeout(() => p.style.display = "none", 620);
+    document.getElementById("nav").classList.add("on");
+    document.querySelectorAll(".hero > .kicker,.hero > .title,.hero > .sub,.hero > .acts,.hero > .stats,.scroll-hint").forEach(el => el.style.opacity = "");
+  }, 400));
+
+  /* reveal on scroll */
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { threshold: .14 });
+  document.querySelectorAll("[data-reveal],[data-reveal-l],[data-reveal-r]").forEach(el => io.observe(el));
+
+  /* hero parallax */
+  let lk = false;
+  addEventListener("scroll", () => {
+    const y = scrollY;
+    const bg = document.querySelector(".hero .bg");
+    if (y < innerHeight * .9) bg.style.transform = `translateY(${y * .32}px)`;
+    clearTimeout(lk); lk = setTimeout(() => {}, 16);
+  }, { passive: true });
+
+  /* lightbox */
+  const lb = document.getElementById("lb"), lbimg = document.getElementById("lbimg");
+  document.querySelectorAll(".gal figure").forEach(f => f.addEventListener("click", () => {
+    lbimg.src = f.querySelector("img").src; lb.style.display = "flex";
+  }));
+  document.getElementById("lbclose").onclick = () => lb.style.display = "none";
+  lb.addEventListener("click", () => lb.style.display = "none");
+</script>
+</body>
+</html>

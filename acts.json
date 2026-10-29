@@ -1,0 +1,107 @@
+{
+  "data": {
+    "total": 23,
+    "count": 8,
+    "offset": 0,
+    "limit": 8,
+    "desc": false,
+    "items": [
+      {
+        "id": "BG3WDrGdteHgZgbPK",
+        "createdAt": "2018-10-28T15:52:40.310Z",
+        "modifiedAt": "2026-10-27T10:59:07.842Z",
+        "name": "Amazon-crawler",
+        "username": "junglee",
+        "title": "Amazon Product Scraper",
+        "stats": {
+          "totalRuns": 2,
+          "lastRunStartedAt": "2026-10-12T17:20:41.483Z"
+        }
+      },
+      {
+        "id": "nwua9Gu5YrADL7ZDj",
+        "createdAt": "2018-11-19T16:58:07.667Z",
+        "modifiedAt": "2026-10-29T13:22:18.500Z",
+        "name": "crawler-google-places",
+        "username": "compass",
+        "title": "Google Maps Scraper",
+        "stats": {
+          "totalRuns": 45,
+          "lastRunStartedAt": "2026-10-05T19:19:56.922Z"
+        }
+      },
+      {
+        "id": "nFJndFXA5zjCTuudP",
+        "createdAt": "2019-02-18T11:03:13.744Z",
+        "modifiedAt": "2026-10-28T09:52:59.472Z",
+        "name": "google-search-scraper",
+        "username": "apify",
+        "title": "Google Search Results Scraper",
+        "stats": {
+          "totalRuns": 3,
+          "lastRunStartedAt": "2026-10-05T19:19:17.593Z"
+        }
+      },
+      {
+        "id": "shu8hvrXbJbY3Eb9W",
+        "createdAt": "2019-04-30T13:43:08.975Z",
+        "modifiedAt": "2026-10-29T14:41:45.495Z",
+        "name": "instagram-scraper",
+        "username": "apify",
+        "title": "Instagram Scraper",
+        "stats": {
+          "totalRuns": 23,
+          "lastRunStartedAt": "2026-10-05T19:21:15.325Z"
+        }
+      },
+      {
+        "id": "dSCLg0C3YEZ83HzYX",
+        "createdAt": "2021-11-15T08:44:42.068Z",
+        "modifiedAt": "2026-10-29T14:41:45.504Z",
+        "name": "instagram-profile-scraper",
+        "username": "apify",
+        "title": "Instagram Profile Scraper",
+        "stats": {
+          "totalRuns": 12,
+          "lastRunStartedAt": "2026-09-10T21:32:27.682Z"
+        }
+      },
+      {
+        "id": "reGe1ST3OBgYZSsZJ",
+        "createdAt": "2021-11-16T09:08:08.244Z",
+        "modifiedAt": "2026-10-29T14:41:45.491Z",
+        "name": "instagram-hashtag-scraper",
+        "username": "apify",
+        "title": "Instagram Hashtag Scraper",
+        "stats": {
+          "totalRuns": 4,
+          "lastRunStartedAt": "2026-07-19T20:22:28.075Z"
+        }
+      },
+      {
+        "id": "nH2AHrwxeTRJoN5hX",
+        "createdAt": "2021-11-24T13:35:27.668Z",
+        "modifiedAt": "2026-10-29T14:41:45.494Z",
+        "name": "instagram-post-scraper",
+        "username": "apify",
+        "title": "Instagram Post Scraper",
+        "stats": {
+          "totalRuns": 5,
+          "lastRunStartedAt": "2026-09-10T21:33:34.246Z"
+        }
+      },
+      {
+        "id": "Xb8osYTtOjlsgI6k9",
+        "createdAt": "2022-02-17T15:59:17.870Z",
+        "modifiedAt": "2026-10-29T13:01:32.307Z",
+        "name": "Google-Maps-Reviews-Scraper",
+        "username": "compass",
+        "title": "Google Maps Reviews Scraper",
+        "stats": {
+          "totalRuns": 2,
+          "lastRunStartedAt": "2026-09-08T20:27:52.437Z"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "data": {
+    "id": "Xb8osYTtOjlsgI6k9",
+    "userId": "R6HCFYaZNqjQA9ZWx",
+    "name": "Google-Maps-Reviews-Scraper",
+    "username": "compass",
+    "description": "Extract all reviews of Google Maps places using place URLs. Get review text, published date, response from owner, review URL, and reviewer's details. Download scraped data, run the scraper via API, schedule and monitor runs or integrate with other tools.",
+    "isPublic": true,
+    "createdAt": "2022-02-17T15:59:17.870Z",
+    "modifiedAt": "2026-10-29T13:01:32.307Z",
+    "taggedBuilds": {
+      "latest": {
+        "buildId": "r2hfu9lD6OYwDS0jW",
+        "finishedAt": "2026-10-29T12:56:37.193Z",
+        "buildNumberInt": 543,
+        "buildNumber": "0.0.543"
+      }
+    },
+    "stats": {
+      "totalBuilds": 3217,
+      "totalRuns": 183073199,
+      "totalUsers": 66061,
+      "totalUsers7Days": 4425,
+      "totalUsers30Days": 8971,
+      "totalUsers90Days": 14075,
+      "lastRunStartedAt": "2026-10-29T20:26:35.694Z",
+      "publicActorRunStats30Days": {
+        "ABORTED": 6210,
+        "FAILED": 24106,
+        "SUCCEEDED": 12818274,
+        "TIMED-OUT": 8443,
+        "TOTAL": 12857033
+      },
+      "totalMetamorphs": 2,
+      "actorReviewCount": 199,
+      "actorReviewRating": 4.855270774428383,
+      "bookmarkCount": 765
+    },
+    "versions": [
+      {
+        "versionNumber": "0.0",
+        "sourceType": "GIT_REPO",
+        "buildTag": "latest"
+      },
+      {
+        "versionNumber": "0.99",
+        "sourceType": "GIT_REPO",
+        "buildTag": null
+      },
+      {
+        "versionNumber": "1.0",
+        "sourceType": "GIT_REPO",
+        "buildTag": "output-schema"
+      }
+    ],
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 36000,
+      "memoryMbytes": 1024,
+      "maxItems": null,
+      "maxTotalChargeUsd": null
+    },
+    "exampleRunInput": {
+      "body": "{ \"helloWorld\": 123 }",
+      "contentType": "application/json; charset=utf-8"
+    },
+    "categories": [
+      "TRAVEL"
+    ],
+    "isDeprecated": false,
+    "title": "Google Maps Reviews Scraper",
+    "pictureUrl": "https://apify-image-uploads-prod.s3.amazonaws.com/Xb8osYTtOjlsgI6k9/f6L3vmKhgziuYaycf-Google_Maps_Reviews_Scraper.png",
+    "seoTitle": "Google Maps Reviews Scraper",
+    "seoDescription": "Google Maps Reviews Scraper extracts all reviews for a single location on Google Maps. Just enter the URL of the place and get a dataset of all reviews.",
+    "pricingInfos": [
+      {
+        "pricingModel": "FLAT_PRICE_PER_MONTH",
+        "pricePerUnitUsd": 30,
+        "trialMinutes": 20160,
+        "createdAt": "2022-03-14T06:57:42.624Z",
+        "startedAt": "2022-03-14T06:57:42.624Z",
+        "apifyMarginPercentage": 0
+      },
+      {
+        "pricingModel": "PRICE_PER_DATASET_ITEM",
+        "pricePerUnitUsd": 0.0005,
+        "reasonForChange": "",
+        "unitName": "reviews",
+        "startedAt": "2024-08-15T00:00:00.000Z",
+        "createdAt": "2024-08-01T08:37:56.581Z",
+        "apifyMarginPercentage": 0.2,
+        "notifiedAboutFutureChangeAt": "2024-08-01T08:38:20.075Z",
+        "notifiedAboutChangeAt": "2024-08-15T00:09:19.252Z"
+      },
+      {
+        "pricingModel": "PRICE_PER_DATASET_ITEM",
+        "tieredPricing": {
+          "FREE": {
+            "tieredPricePerUnitUsd": 0.0006
+          },
+          "BRONZE": {
+            "tieredPricePerUnitUsd": 0.0005
+          },
+          "SILVER": {
+            "tieredPricePerUnitUsd": 0.00045
+          },
+          "GOLD": {
+            "tieredPricePerUnitUsd": 0.00035
+          },
+          "PLATINUM": {
+            "tieredPricePerUnitUsd": 0.00025
+          },
+          "DIAMOND": {
+            "tieredPricePerUnitUsd": 0.0002
+          }
+        },
+        "reasonForChange": "Introducing Apify Store discounts.",
+        "unitName": "review",
+        "startedAt": "2025-06-27T10:28:00.000Z",
+        "createdAt": "2025-06-27T10:28:00.000Z",
+        "apifyMarginPercentage": 0.2,
+        "notifiedAboutChangeAt": "2025-06-27T10:28:00.000Z"
+      },
+      {
+        "minimalMaxTotalChargeUsd": null,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "review-scraped": {
+              "eventTitle": "Scraped review",
+              "eventDescription": "Cost per individual review scraped.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0006
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.00045
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0004
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0003
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0002
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.00015
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.00005
+            }
+          }
+        },
+        "createdAt": "2026-03-13T12:57:35.676Z",
+        "startedAt": "2026-03-13T12:57:35.676Z",
+        "apifyMarginPercentage": 0.2
+      }
+    ],
+    "notice": "NONE",
+    "isCritical": true,
+    "isGeneric": false,
+    "hasNoDataset": false,
+    "isSourceCodeHidden": true,
+    "actorStandby": {
+      "isEnabled": true,
+      "disableStandbyFieldsOverride": true,
+      "tenancy": "MULTI_TENANT",
+      "maxRequestsPerActorRun": 32,
+      "desiredRequestsPerActorRun": 24,
+      "idleTimeoutSecs": 300,
+      "build": "latest",
+      "memoryMbytes": 1024,
+      "shouldPassActorInput": false,
+      "isConsoleAuthEnabled": false,
+      "isTokenlessEnabled": false
+    },
+    "standbyUrl": "https://compass--google-maps-reviews-scraper.apify.actor",
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "readmeSummary": "## Google Maps Reviews Scraper\n\nA web-scraping Actor that extracts structured review and place metadata from Google Maps: it collects review text and translations, star ratings, publication timestamps, review identifiers and URLs, owner responses, attached review images, reviewer profile data (name, profile photo, contributor status, number of reviews), contextual and per-service rating details, language/original-language info, and Google Maps place metadata (categories, location coordinates, place title, aggregated score, total review count, and related identifiers). The Actor can target review origin sources (Google-native vs third-party) and scale to scrape large numbers of reviews, producing row-like structured records suitable for sentiment, analytics, and downstream processing.\n\n## Use cases\n\n- Customer sentiment analysis from Google Maps reviews  \n- Competitor analysis using review content and ratings  \n- Market research to discover trends and customer expectations  \n- Lead generation from reviewer and location data  \n- Reputation management and review monitoring  \n- Product improvement via aggregated feedback and common complaints  \n- Content generation using authentic customer quotes or testimonials  \n- Brand monitoring across multiple locations  \n- Location performance tracking and multi-branch comparison",
+    "deploymentKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDf5wvqafk5JvP0pCGm4V51CWzJmuHPuXnCYYrZ23IOzf6kwXI4bGFPs93Dv3fGzSDXus0kUZYJRoCndxTECI3ync1OxNa5imi3s127LTh6sfSESSjUJ7J5dKRhSpQhxvNNnNhs4QvYfoLGcfwb+MojZqsWNxwlG9sZrzHqrZeOySaEa4XcGGEtwvRd2/jEADTocyxjr9CyUH9QjxX7i7szsUoikuWQfCqGtxs78XCPm9Z22Lwq3tQHKdMppAfMxLr5+DKhGZHNhqkrci0L8jz4xPReaKfAbFlgRC2qmaARI2TkJ/9pBEDUehps3tMbpSNvqmFnvr9cf2NwptwpTp4L \n"
+  }
+}
