@@ -91,27 +91,30 @@
   .mitem .pr{font-family:"Cormorant Garamond",serif;font-size:19px;color:var(--taupe)}
   .mitem .gf{font:500 9px/1 "Inter";letter-spacing:.18em;text-transform:uppercase;color:rgba(185,164,141,.7);grid-column:2/3;margin-top:.2rem}
 
-  /* S5 room — long drift with exit */
-  .hdrift{position:absolute;top:50%;left:0;display:flex;gap:1.6vw;align-items:center;will-change:transform;padding:0 4vw}
-  .hdrift figure{width:min(30vw,420px);height:62vh;overflow:hidden;border:1px solid var(--line);position:relative;flex-shrink:0}
-  .hdrift img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
-  .hdrift figure:hover img{transform:scale(1.07)}
-  .hdrift figcaption{position:absolute;left:.5rem;bottom:.5rem;font:500 9px/1 "Inter";letter-spacing:.26em;text-transform:uppercase;background:rgba(22,15,11,.6);padding:.3rem .5rem}
-  .drift-title{position:absolute;top:11vh;left:5vw;z-index:2}
-  .drift-end{position:absolute;bottom:9vh;left:5vw;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(20px,2.6vw,30px);color:var(--taupe);opacity:0;z-index:2}
+  /* S5 room — full-screen panoramic sweep */
+  .hdrift{position:absolute;inset:0;display:flex;will-change:transform}
+  .hdrift figure{width:100vw;height:100vh;flex-shrink:0;position:relative;overflow:hidden}
+  .hdrift img{width:100%;height:100%;object-fit:cover}
+  .hdrift .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,15,11,.14),transparent 40%,rgba(22,15,11,.72) 100%)}
+  .hdrift figcaption{position:absolute;left:clamp(1.2rem,6vw,5rem);bottom:14vh;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(26px,3.4vw,44px);color:var(--cream);text-shadow:0 8px 30px rgba(0,0,0,.6)}
+  .hdrift figcaption small{display:block;font:500 10px/1 "Inter";letter-spacing:.3em;text-transform:uppercase;color:rgba(249,233,218,.8);margin-bottom:.7rem}
+  .drift-ttl{position:absolute;top:11vh;left:5vw;z-index:3}
+  .room-count{position:absolute;right:clamp(1.2rem,5vw,4rem);bottom:14vh;z-index:3;font-family:"Cormorant Garamond",serif;font-size:44px;color:var(--cream)}
+  .room-count small{font:500 11px/1 "Inter";letter-spacing:.3em;text-transform:uppercase;color:rgba(249,233,218,.75)}
 
-  /* S6 praise — iOS reel */
-  .reel-stage{width:100%;position:relative;overflow:visible}
-  .reel-top{display:flex;gap:2.2rem;align-items:baseline;margin:0 5vw 2rem}
-  .rat{font-family:"Cormorant Garamond",serif;font-size:88px;color:var(--blood);line-height:1;font-variant-numeric:tabular-nums}
-  .reel{position:relative;height:52vh;margin:0 5vw;perspective:1200px}
-  .reel .qpin{position:absolute;left:0;right:0;top:0;will-change:transform,opacity}
-  .reel .q{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.8vw,36px);line-height:1.45;color:var(--ink)}
+  /* S6 praise — one readable quote, clean flip-in */
+  .reel-stage{width:100%;position:relative;overflow:visible;display:flex;flex-direction:column;align-items:center}
+  .reel-top{display:flex;gap:1.8rem;align-items:baseline;margin:0 0 1.4rem}
+  .rat{font-family:"Cormorant Garamond",serif;font-size:60px;color:var(--blood);line-height:1;font-variant-numeric:tabular-nums}
+  .rat small{font-size:20px;color:var(--taupe)}
+  .reel{position:relative;height:46vh;width:min(94vw,860px);perspective:1400px}
+  .reel .qpin{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;will-change:transform,opacity}
+  .reel .q{font-family:"Cormorant Garamond",serif;font-size:clamp(26px,3vw,38px);line-height:1.5;color:var(--ink);max-width:780px}
   .reel .q::before{content:"“";color:var(--ox)} .reel .q::after{content:"”";color:var(--ox)}
-  .reel .who{font:500 11px/1.6 "Inter";letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);margin-top:1.2rem}
-  .reel .who b{display:block;color:var(--ink)}
-  .reel-dots{display:flex;gap:.6rem;justify-content:center;margin-top:1.6rem}
-  .reel-dots span{width:26px;height:2px;background:var(--line2);transition:background .3s,transform .3s}
+  .reel .who{font:500 11px/1.6 "Inter";letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);margin-top:1.4rem}
+  .reel .who b{display:block;color:var(--ink);font-size:13px}
+  .reel-dots{display:flex;gap:.7rem;justify-content:center;margin-top:1.2rem}
+  .reel-dots span{width:26px;height:2px;background:var(--line2);transition:background .3s}
   .reel-dots span.on{background:var(--ox)}
 
   /* S7 visit — map finale */
@@ -243,18 +246,16 @@
     <div class="stage" style="overflow:hidden">
       <div class="kicker drift-title">The room &amp; the plates</div>
       <div class="hdrift" id="s5drift">
-        <figure><img src="assets/hero-alt.jpg" alt=""><figcaption>The room</figcaption></figure>
-        <figure><img src="assets/guest-00.jpg" alt=""><figcaption>At the bar</figcaption></figure>
-        <figure><img src="assets/guest-04.jpg" alt=""><figcaption>First round</figcaption></figure>
-        <figure><img src="assets/guest-09.jpg" alt=""><figcaption>Guest plate</figcaption></figure>
-        <figure><img src="assets/guest-13.jpg" alt=""><figcaption>Late night</figcaption></figure>
-        <figure><img src="assets/guest-06.jpg" alt=""><figcaption>The pour</figcaption></figure>
-        <figure><img src="assets/guest-08.jpg" alt=""><figcaption>Guest plate</figcaption></figure>
-        <figure><img src="assets/guest-23.jpg" alt=""><figcaption>The room</figcaption></figure>
-        <figure><img src="assets/guest-18.jpg" alt=""><figcaption>Guest plate</figcaption></figure>
-        <figure><img src="assets/guest-20.jpg" alt=""><figcaption>Small plates</figcaption></figure>
+        <figure><img src="assets/hero-alt.jpg" alt=""><div class="shade"></div><figcaption><small>The room</small>where the evening starts</figcaption></figure>
+        <figure><img src="assets/guest-00.jpg" alt=""><div class="shade"></div><figcaption><small>At the bar</small>the first round</figcaption></figure>
+        <figure><img src="assets/guest-04.jpg" alt=""><div class="shade"></div><figcaption><small>Guest plate</small>made at the pass</figcaption></figure>
+        <figure><img src="assets/guest-09.jpg" alt=""><div class="shade"></div><figcaption><small>Guest plate</small>served, smoked, shared</figcaption></figure>
+        <figure><img src="assets/guest-13.jpg" alt=""><div class="shade"></div><figcaption><small>Late night</small>the room after dark</figcaption></figure>
+        <figure><img src="assets/guest-06.jpg" alt=""><div class="shade"></div><figcaption><small>The pour</small>wine, cocktails, care</figcaption></figure>
+        <figure><img src="assets/guest-08.jpg" alt=""><div class="shade"></div><figcaption><small>Guest plate</small>fire &amp; smoke</figcaption></figure>
+        <figure><img src="assets/guest-23.jpg" alt=""><div class="shade"></div><figcaption><small>The room</small>Holmedale's own</figcaption></figure>
       </div>
-      <div class="drift-end" id="s5end">keep scrolling — there's more…</div>
+      <div class="room-count" id="s5count"><b>01</b> <small>/ 08</small></div>
     </div>
   </div>
 
@@ -263,7 +264,7 @@
     <div class="stage">
       <div class="reel-stage">
         <div class="reel-top">
-          <div class="rat serif"><b id="s6r">0</b>/5</div>
+          <div class="rat serif"><b id="s6r">0</b><small>/5</small></div>
           <div style="font:500 11px/1.6 'Inter';letter-spacing:.18em;text-transform:uppercase;color:var(--taupe)">Google rating · 518 reviews<br/>Brantford, ON</div>
         </div>
         <div class="reel" id="s6reel">
@@ -384,42 +385,39 @@
       });
     }
 
-    /* S5 room: longer drift + fade out clean */
+    /* S5 room: full-screen panoramic sweep (stuck center, one image per beat) */
     const s5 = document.querySelector("#s-room");
+    const s5figs = document.querySelectorAll("#s5drift figure").length;
     scroll(p => {
       const driftEl = document.getElementById("s5drift");
-      const total = 3200;
-      const move = Math.min(1, p / .82);
-      driftEl.style.transform = `translateX(${-move * total}px)`;
-      const out = Math.min(1, Math.max(0, (p - .84) / .16));
-      driftEl.style.opacity = 1 - out;
-      driftEl.style.scale = 1 - out * .08;
-      document.getElementById("s5end").style.opacity = p > .62 ? Math.min(1, (p - .62) / .15) : 0;
+      driftEl.style.transform = `translateX(${-p * (s5figs - 1) * window.innerWidth}px)`;
+      const idx = Math.min(s5figs - 1, Math.round(p * (s5figs - 1)));
+      document.getElementById("s5count").innerHTML = `<b>${String(idx + 1).padStart(2, "0")}</b> <small>/ ${String(s5figs).padStart(2, "0")}</small>`;
     }, { target: s5, offset: ["start start", "end end"] });
 
-    /* S6 praise: iOS reel — quotes rotate in one at a time */
+    /* S6 praise: one readable quote per beat, quick fade-through + flip-in */
     const s6 = document.querySelector("#s-praise");
     const quotes6 = document.querySelectorAll("#s6reel .qpin");
     const dots = document.querySelectorAll("#s6dots span");
     const N = quotes6.length;
     scroll(p => {
-      const idx = Math.min(N - 1, Math.floor(p * N));
+      const pos = p * N;
+      const idx = Math.min(N - 1, Math.max(0, Math.floor(pos)));
+      const frac = pos - idx;
       quotes6.forEach((q, i) => {
-        const d = i - idx;
-        let tr = `translateY(${d * 22}px)`;
-        let o = 1;
-        let r = "translateZ(0)";
+        let o = 0, tr = "translateZ(0)", r = "rotateX(0deg)";
         if (i === idx) {
-          const t = Math.min(1, Math.max(0, (p * N - idx) * 6)); /* 0..1 across the beat */
-          r = `rotateX(${(1 - t) * 42}deg)`;
-          o = Math.min(1, Math.max(.1, t + .4));
-        } else if (d === 1) {
-          o = .08; tr = `translateY(26px) scale(.96)`;
-        } else if (d === -1) {
-          o = .14; tr = `translateY(-26px) scale(.97)`;
-        } else {
-          o = 0;
-        }
+          /* exiting: hands off to the next over the first half of the beat */
+          const t = Math.min(1, Math.max(0, frac * 2.4));
+          o = 1 - t;
+          r = `rotateX(${-t * 26}deg)`;
+          tr = `translateY(${-t * 26}px)`;
+        } else if (i === idx + 1) {
+          const t = Math.min(1, Math.max(0, frac * 2.4));
+          o = Math.min(1, t);
+          r = `rotateX(${-(1 - t) * 26}deg)`;
+          tr = `translateY(${-(1 - t) * 26}px)`;
+        } else if (i === idx - 1) { o = 0; }
         q.style.opacity = o;
         q.style.transform = `${tr} ${r}`;
       });
