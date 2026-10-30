@@ -14,7 +14,7 @@
 <style>
   :root{
     --night:#160f0b; --espresso:#1e140f; --ink:#0e0a07;
-    --ox:#950101; --blood:#560000; --taupe:#9a7b5f; --cream:#f9e9da; --paper2:#f3e0cd;
+    --ox:#950101; --blood:#560000; --taupe:#9a7b5f; --cream:#f9e9da;
     --muted:#b9a48d; --line:rgba(249,233,218,.14); --line2:rgba(22,15,11,.18); --gold:#bc8a2f;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -25,27 +25,22 @@
   a{color:inherit;text-decoration:none}
   .serif{font-family:"Cormorant Garamond",serif}
 
-  /* fixed nav */
   header{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.2rem,6vw,5rem);height:80px;mix-blend-mode:difference;color:#fff}
   .brand{display:flex;align-items:center;gap:.9rem}
   .brand img{height:28px;width:auto;filter:brightness(0) invert(1)}
   .brand .mark{font:600 10px/1 "Inter";letter-spacing:.4em;text-transform:uppercase;opacity:.7}
   nav ul{display:flex;gap:2.2rem;list-style:none}
-  nav a{font:500 11px/1 "Inter";letter-spacing:.2em;text-transform:uppercase;opacity:.92;transition:opacity .25s}
+  nav a{font:500 11px/1 "Inter";letter-spacing:.2em;text-transform:uppercase;opacity:.92}
   nav a:hover{opacity:1}
-  .reserve{font:600 11px/1 "Inter";letter-spacing:.24em;text-transform:uppercase;padding:.6rem 1rem 0.6rem .4rem}
+  .reserve{font:600 11px/1 "Inter";letter-spacing:.24em;text-transform:uppercase;padding:.6rem 1rem}
 
-  /* ————— SCROLL SCENES (Framer-pattern: tall wrapper + sticky stage) ————— */
-  .scene{position:relative;height:300vh}
+  .scene{position:relative;height:320vh}
   .stage{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
-  .scene.s2v{height:280vh}
-  .scene.s3v{height:320vh}
-  .scene.s4v{height:360vh}
-  .scene.s5v{height:400vh}
+  .scene.s2v{height:280vh}.scene.s4v{height:380vh}
 
   /* S0 hero */
   .hero-stage{position:sticky;top:0;height:100vh;overflow:hidden}
-  .hero-stage .bg{position:absolute;inset:-12% 0;background:url("assets/hero-main.jpg") center/cover no-repeat;will-change:transform}
+  .hero-stage .bg{position:absolute;inset:-12% 0;background:url("assets/hero-main.jpg") center/cover no-repeat}
   .hero-stage .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,15,11,.45),rgba(22,15,11,.2) 46%,rgba(22,15,11,.92) 100%)}
   .hero-stage .frame{position:absolute;inset:5% 3%;border:1px solid rgba(249,233,218,.3);pointer-events:none}
   .hero-copy{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 1rem}
@@ -62,85 +57,90 @@
   .hero-stats b{display:block;font-family:"Cormorant Garamond",serif;font-size:23px;font-variant-numeric:tabular-nums}
   .hero-stats span{font:500 10px/1.5 "Inter";letter-spacing:.2em;text-transform:uppercase;color:rgba(249,233,218,.55)}
 
-  /* scene type/paper */
-  .scene-cream{background:var(--cream);color:var(--ink)}
-  .scene-dark{background:var(--night)}
-  .stage-copy{max-width:900px;padding:0 clamp(1.2rem,7vw,6rem);text-align:center}
   .kicker{font:600 11px/1 "Inter";letter-spacing:.42em;text-transform:uppercase;color:var(--ox)}
   .big{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(34px,4.6vw,64px);line-height:1.02;letter-spacing:-.02em;margin-top:1.2rem}
   .big i{font-style:italic}
   .sub{font:400 15.5px/1.8 "Inter";max-width:560px;margin:1.4rem auto 0;opacity:.85}
 
-  /* S2 fire macro: two imgs pinch */
+  /* S2 fire */
   .macro{position:absolute;width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:4vw}
   .macro img{width:min(38vw,520px);height:78vh;object-fit:cover;will-change:transform;box-shadow:0 30px 90px rgba(0,0,0,.55)}
   .macro-copy{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;z-index:2;pointer-events:none}
-  .macro-copy .big{color:var(--cream);text-shadow:0 12px 40px rgba(15,10,7,.8)}
+  .scene-cream{background:var(--cream);color:var(--ink)}
 
-  /* S3 cream story: images rise from bottom */
+  /* S3 story cream */
   .rise-grid{position:absolute;inset:0;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:6vw;padding:0 clamp(1.2rem,7vw,6rem)}
   .rise-grid .imgs{position:relative;height:76vh}
   .rise-grid .imgs img{position:absolute;width:min(30vw,430px);height:56vh;object-fit:cover;box-shadow:0 24px 70px rgba(22,15,11,.3)}
   .rise-grid .imgs img:first-child{left:0;top:0}
   .rise-grid .imgs img:nth-child(2){right:2vw;bottom:0;width:min(26vw,360px);height:48vh}
-  .rise-grid .txt .big{color:var(--ink)}
   .rise-grid .txt p{font:400 15px/1.85 "Inter";color:rgba(22,15,11,.8);max-width:520px;margin:1.2rem 0 0}
 
-  /* S4 menu sheet: scroll-in panel */
-  .menu-sheet{width:min(92vw,860px);border:1px solid var(--line);background:var(--espresso);padding:clamp(1.6rem,5vw,3.6rem);will-change:transform;box-shadow:0 40px 120px rgba(0,0,0,.5)}
+  /* S4 menu — read choreography */
+  .menu-stage{width:100%;display:flex;align-items:center;justify-content:center;position:relative}
+  .menu-bg{position:absolute;inset:-20% -40%;background:url("assets/hero-alt.jpg") center/cover no-repeat;filter:brightness(.28);will-change:transform}
+  .menu-sheet{position:relative;width:min(92vw,860px);border:1px solid var(--line);background:rgba(30,20,15,.92);backdrop-filter:blur(6px);padding:clamp(1.6rem,5vw,3.6rem);will-change:transform;box-shadow:0 40px 120px rgba(0,0,0,.6)}
   .mk{display:flex;justify-content:space-between;align-items:baseline;font:600 10px/1 "Inter";letter-spacing:.34em;text-transform:uppercase;color:var(--muted);padding-bottom:1.2rem;border-bottom:1px solid var(--line)}
-  .mk i{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;letter-spacing:.02em;text-transform:none;color:var(--taupe)}
-  .mitem{padding:1.5rem .6rem;display:grid;grid-template-columns:auto 1fr auto;gap:0 1.3rem;align-items:baseline;border-bottom:1px solid var(--line);will-change:transform}
+  .mk i{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;text-transform:none;color:var(--taupe)}
+  .mitem{padding:1.45rem .6rem;display:grid;grid-template-columns:auto 1fr auto;gap:0 1.3rem;align-items:baseline;border-bottom:1px solid var(--line);will-change:transform;position:relative}
   .mitem:last-child{border-bottom:0}
+  .mitem::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ox);transform-origin:top;will-change:transform}
   .mitem .no{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:13px;color:var(--ox)}
   .mitem .nm{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:600;letter-spacing:-.01em}
   .mitem .d{grid-column:2/3;font:400 12.5px/1.5 "Inter";color:var(--muted);margin-top:.14rem}
   .mitem .pr{font-family:"Cormorant Garamond",serif;font-size:19px;color:var(--taupe)}
   .mitem .gf{font:500 9px/1 "Inter";letter-spacing:.18em;text-transform:uppercase;color:rgba(185,164,141,.7);grid-column:2/3;margin-top:.2rem}
 
-  /* S5 gallery: horizontal drift */
-  .hdrift{position:absolute;top:50%;left:0;display:flex;gap:1.4vw;align-items:center;will-change:transform;padding:0 4vw}
+  /* S5 room — long drift with exit */
+  .hdrift{position:absolute;top:50%;left:0;display:flex;gap:1.6vw;align-items:center;will-change:transform;padding:0 4vw}
   .hdrift figure{width:min(30vw,420px);height:62vh;overflow:hidden;border:1px solid var(--line);position:relative;flex-shrink:0}
-  .hdrift img{width:100%;height:100%;object-fit:cover}
+  .hdrift img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+  .hdrift figure:hover img{transform:scale(1.07)}
   .hdrift figcaption{position:absolute;left:.5rem;bottom:.5rem;font:500 9px/1 "Inter";letter-spacing:.26em;text-transform:uppercase;background:rgba(22,15,11,.6);padding:.3rem .5rem}
-  .drift-title{position:absolute;top:12vh;left:5vw;z-index:2}
+  .drift-title{position:absolute;top:11vh;left:5vw;z-index:2}
+  .drift-end{position:absolute;bottom:9vh;left:5vw;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(20px,2.6vw,30px);color:var(--taupe);opacity:0;z-index:2}
 
-  /* S6 praise */
-  .qpin{max-width:940px;padding:0 clamp(1.2rem,6vw,5rem);text-align:left;position:relative}
-  .qpin .q{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.6vw,34px);line-height:1.45;color:var(--ink)}
-  .qpin .q::before{content:"“";color:var(--ox)}
-  .qpin .q::after{content:"”";color:var(--ox)}
-  .qpin .who{font:500 11px/1.6 "Inter";letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);margin-top:1.4rem}
-  .qpin .who b{display:block;color:var(--ink)}
+  /* S6 praise — iOS reel */
+  .reel-stage{width:100%;position:relative;overflow:visible}
+  .reel-top{display:flex;gap:2.2rem;align-items:baseline;margin:0 5vw 2rem}
   .rat{font-family:"Cormorant Garamond",serif;font-size:88px;color:var(--blood);line-height:1;font-variant-numeric:tabular-nums}
+  .reel{position:relative;height:52vh;margin:0 5vw;perspective:1200px}
+  .reel .qpin{position:absolute;left:0;right:0;top:0;will-change:transform,opacity}
+  .reel .q{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.8vw,36px);line-height:1.45;color:var(--ink)}
+  .reel .q::before{content:"“";color:var(--ox)} .reel .q::after{content:"”";color:var(--ox)}
+  .reel .who{font:500 11px/1.6 "Inter";letter-spacing:.18em;text-transform:uppercase;color:var(--taupe);margin-top:1.2rem}
+  .reel .who b{display:block;color:var(--ink)}
+  .reel-dots{display:flex;gap:.6rem;justify-content:center;margin-top:1.6rem}
+  .reel-dots span{width:26px;height:2px;background:var(--line2);transition:background .3s,transform .3s}
+  .reel-dots span.on{background:var(--ox)}
 
-  /* S7 visit */
-  .visit-grid{width:min(92vw,980px);display:grid;grid-template-columns:1fr 1fr;gap:4vw;text-align:left}
+  /* S7 visit — map finale */
+  .visit-bg{position:absolute;inset:-14% 0;background:url("assets/bg.jpg") center/cover no-repeat;filter:brightness(.5);will-change:transform}
+  .visit-box{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:2.4rem;width:min(90vw,1000px);align-items:stretch}
+  .vcard{background:rgba(30,20,15,.88);backdrop-filter:blur(8px);border:1px solid var(--line);padding:clamp(1.4rem,3.4vw,2.6rem);will-change:transform}
   .vtitle{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600;margin-bottom:1rem}
   .vbody{font:400 14px/1.9 "Inter";color:rgba(249,233,218,.85)}
   .vbody a{color:#e0bc8a;border-bottom:1px solid rgba(224,188,138,.4)}
   .hours{list-style:none;border-top:1px solid var(--line);margin:.5rem 0 0}
-  .hours li{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:.55rem .8rem;font:400 13px/1 "Inter"}
+  .hours li{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:.5rem .6rem;font:400 13px/1 "Inter"}
   .hours li span{color:var(--muted)}
-  .mapwrap{position:relative;min-height:46vh;border:1px solid var(--line);overflow:hidden;will-change:transform}
-  .mapwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.9) invert(.92) contrast(.88)}
+  .cta-final{display:inline-block;margin-top:1.6rem;background:var(--ox);color:var(--cream);font:600 11.5px/1 "Inter";letter-spacing:.26em;text-transform:uppercase;padding:.9rem 1.8rem}
 
-  footer{background:var(--ink);padding:2.4rem 0 1.8rem;text-align:center}
-  footer .soc{display:flex;gap:1.6rem;justify-content:center;margin-bottom:1rem}
+  footer{background:var(--ink);padding:2.2rem 0 1.6rem;text-align:center}
+  footer .soc{display:flex;gap:1.6rem;justify-content:center;margin-bottom:.9rem}
   footer .soc a{font:500 10.5px/1 "Inter";letter-spacing:.3em;text-transform:uppercase;color:rgba(249,233,218,.7)}
   footer .legal{font:400 10px/1.7 "Inter";letter-spacing:.08em;color:rgba(249,233,218,.4)}
   footer .legal span{color:var(--ox)}
 
   @media(max-width:900px){
     nav{display:none}
-    header{padding:0 1.2rem}
     .macro{flex-direction:column;gap:3vw}
     .macro img{width:74vw;height:34vh}
     .rise-grid{grid-template-columns:1fr;gap:2rem}
     .rise-grid .imgs{height:44vh}
     .rise-grid .imgs img{width:52vw;height:30vh}
     .rise-grid .imgs img:nth-child(2){width:44vw;height:26vh}
-    .visit-grid{grid-template-columns:1fr}
+    .visit-box{grid-template-columns:1fr}
     .hdrift figure{width:70vw;height:46vh}
     .hero-copy h1{font-size:46px}
   }
@@ -150,16 +150,11 @@
 
 <header id="nav">
   <div class="brand"><img src="assets/logo.png" alt="Fume RestoBar" /><span class="mark">Brantford</span></div>
-  <nav>
-    <ul>
-      <li><a href="#s-fire">Fire</a></li>
-      <li><a href="#s-story">Story</a></li>
-      <li><a href="#s-menu">Menu</a></li>
-      <li><a href="#s-room">The Room</a></li>
-      <li><a href="#s-praise">Praise</a></li>
-      <li><a href="#s-visit">Visit</a></li>
-    </ul>
-  </nav>
+  <nav><ul>
+    <li><a href="#s-fire">Fire</a></li><li><a href="#s-story">Story</a></li>
+    <li><a href="#s-menu">Menu</a></li><li><a href="#s-room">The Room</a></li>
+    <li><a href="#s-praise">Praise</a></li><li><a href="#s-visit">Visit</a></li>
+  </ul></nav>
   <a class="reserve" href="https://www.exploretock.com/fume-restobar-brantford" target="_blank" rel="noopener">Reserve</a>
 </header>
 
@@ -184,7 +179,7 @@
     </div>
   </div>
 
-  <!-- S1 MARQUEE CUT -->
+  <!-- marquee cut -->
   <div style="background:var(--espresso);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:.9rem 0;white-space:nowrap">
     <div style="display:inline-block;animation:mq 26s linear infinite;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;letter-spacing:.05em;color:var(--taupe)">
       το καλό της ζωής <span style="color:var(--ox)">✦</span> SMOKED &amp; FIRED <span style="color:var(--ox)">✦</span> GREEK FUSION <span style="color:var(--ox)">✦</span> CRAFT COCKTAILS <span style="color:var(--ox)">✦</span> WINE BAR <span style="color:var(--ox)">✦</span>
@@ -193,28 +188,26 @@
   </div>
   <style>@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}</style>
 
-  <!-- S2 FIRE — pinned macro: two plates pinch + pull -->
+  <!-- S2 FIRE -->
   <div class="scene s2v" id="s-fire" style="background:var(--night)">
     <div class="stage">
       <div class="macro">
         <img id="s2a" src="assets/dish-2.jpg" alt="From the pass" />
         <img id="s2b" src="assets/dish-3.jpg" alt="Fire &amp; smoke" />
       </div>
-      <div class="macro-copy">
-        <div style="opacity:0" id="s2t">
-          <div class="kicker">Fire &amp; smoke</div>
-          <div class="big" style="color:var(--cream)">Smoked. Fired.<br /><i>Nothing else.</i></div>
-          <p class="sub">Smoked pork belly with honey dijon. Steak frites under cowboy butter. Whipped feta blasted with spicy bomba honey.</p>
-        </div>
-      </div>
+      <div class="macro-copy"><div style="opacity:0" id="s2t">
+        <div class="kicker">Fire &amp; smoke</div>
+        <div class="big" style="color:var(--cream)">Smoked. Fired.<br /><i>Nothing else.</i></div>
+        <p class="sub">Smoked pork belly with honey dijon. Steak frites under cowboy butter. Whipped feta blasted with spicy bomba honey.</p>
+      </div></div>
     </div>
   </div>
 
-  <!-- S3 STORY — cream, images rise -->
-  <div class="scene s3v scene-cream" id="s-story">
+  <!-- S3 STORY -->
+  <div class="scene s2v scene-cream" id="s-story">
     <div class="stage">
       <div class="rise-grid">
-        <div class="imgs" id="s3grid">
+        <div class="imgs">
           <img id="s3i1" src="assets/story-1.jpg" alt="Espresso service" />
           <img id="s3i2" src="assets/dish-1.jpg" alt="At the pass" />
         </div>
@@ -227,23 +220,26 @@
     </div>
   </div>
 
-  <!-- S4 MENU — night sheet slides in -->
+  <!-- S4 MENU — read sweep -->
   <div class="scene s4v" id="s-menu" style="background:var(--night)">
     <div class="stage">
-      <div class="menu-sheet" id="s4sheet">
-        <div class="mk"><span>Dinner · 2026</span><i>το καλό της ζωής</i></div>
-        <div class="mitem"><span class="no">i</span><span class="nm">Fume Burger</span><div class="d">½ lb house patty · smoked cheddar · arugula · “Ella” sauce · fries</div><span class="pr">$27</span><span class="gf">GF bun</span></div>
-        <div class="mitem"><span class="no">ii</span><span class="nm">Steak Frites</span><div class="d">8 oz grass-fed sirloin · Fume cowboy butter · portobello · fries</div><span class="pr">$42</span><span class="gf">GF</span></div>
-        <div class="mitem"><span class="no">iii</span><span class="nm">Whipped Feta</span><div class="d">whipped feta &amp; goat cheese · bomba honey · pomegranate · sourdough</div><span class="pr">$18</span><span class="gf">GF option</span></div>
-        <div class="mitem"><span class="no">iv</span><span class="nm">Calamari</span><div class="d">pepperoncini · roasted peppers · lemon aioli</div><span class="pr">$20</span><span class="gf">GF</span></div>
-        <div class="mitem"><span class="no">v</span><span class="nm">Beef Tenderloin</span><div class="d">8 oz sous-vide · blue cheese · garlic mash · seasonal veg</div><span class="pr">$59</span><span class="gf">GF</span></div>
-        <div class="mitem"><span class="no">vi</span><span class="nm">Tuna Poke Bowl</span><div class="d">tuna · avocado · pickled ginger · wasabi aioli · sushi rice · nori</div><span class="pr">$30</span><span class="gf">GF</span></div>
+      <div class="menu-stage">
+        <div class="menu-bg" id="s4bg"></div>
+        <div class="menu-sheet" id="s4sheet">
+          <div class="mk"><span>Dinner · 2026</span><i>το καλό της ζωής</i></div>
+          <div class="mitem"><span class="no">i</span><span class="nm">Fume Burger</span><div class="d">½ lb house patty · smoked cheddar · arugula · “Ella” sauce · fries</div><span class="pr">$27</span><span class="gf">GF bun</span></div>
+          <div class="mitem"><span class="no">ii</span><span class="nm">Steak Frites</span><div class="d">8 oz grass-fed sirloin · Fume cowboy butter · portobello · fries</div><span class="pr">$42</span><span class="gf">GF</span></div>
+          <div class="mitem"><span class="no">iii</span><span class="nm">Whipped Feta</span><div class="d">whipped feta &amp; goat cheese · bomba honey · pomegranate · sourdough</div><span class="pr">$18</span><span class="gf">GF option</span></div>
+          <div class="mitem"><span class="no">iv</span><span class="nm">Calamari</span><div class="d">pepperoncini · roasted peppers · lemon aioli</div><span class="pr">$20</span><span class="gf">GF</span></div>
+          <div class="mitem"><span class="no">v</span><span class="nm">Beef Tenderloin</span><div class="d">8 oz sous-vide · blue cheese · garlic mash · seasonal veg</div><span class="pr">$59</span><span class="gf">GF</span></div>
+          <div class="mitem"><span class="no">vi</span><span class="nm">Tuna Poke Bowl</span><div class="d">tuna · avocado · pickled ginger · wasabi aioli · sushi rice · nori</div><span class="pr">$30</span><span class="gf">GF</span></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- S5 THE ROOM — horizontal drift -->
-  <div class="scene s5v" id="s-room" style="background:var(--espresso)">
+  <!-- S5 ROOM — long drift with fade-out exit -->
+  <div class="scene s4v" id="s-room" style="background:var(--espresso)">
     <div class="stage" style="overflow:hidden">
       <div class="kicker drift-title">The room &amp; the plates</div>
       <div class="hdrift" id="s5drift">
@@ -258,48 +254,57 @@
         <figure><img src="assets/guest-18.jpg" alt=""><figcaption>Guest plate</figcaption></figure>
         <figure><img src="assets/guest-20.jpg" alt=""><figcaption>Small plates</figcaption></figure>
       </div>
+      <div class="drift-end" id="s5end">keep scrolling — there's more…</div>
     </div>
   </div>
 
-  <!-- S6 PRAISE — cream, quotes turn -->
-  <div class="scene s3v scene-cream" id="s-praise">
+  <!-- S6 PRAISE — iOS reel -->
+  <div class="scene s3v scene-cream" id="s-praise" style="height:340vh">
     <div class="stage">
-      <div class="qpin" style="width:100%;max-width:900px;padding:0 5vw">
-        <div style="display:flex;gap:2.2rem;align-items:baseline;margin-bottom:2rem">
+      <div class="reel-stage">
+        <div class="reel-top">
           <div class="rat serif"><b id="s6r">0</b>/5</div>
           <div style="font:500 11px/1.6 'Inter';letter-spacing:.18em;text-transform:uppercase;color:var(--taupe)">Google rating · 518 reviews<br/>Brantford, ON</div>
         </div>
-        <div id="s6quotes">
+        <div class="reel" id="s6reel">
           <div class="qpin" data-q><div class="q">The food is the star of this place — the menu has something for every craving, and drinks are crafted with real care.</div><div class="who"><b>Dylan M.</b>Google · ★★★★★</div></div>
           <div class="qpin" data-q><div class="q">One of the best meals I have had in a long time. From start to finish our server was on it.</div><div class="who"><b>Sam A.</b>Google · ★★★★★</div></div>
           <div class="qpin" data-q><div class="q">This place is what the young folks call “bussin”. Food absolutely fantastic, service even better, great vibe.</div><div class="who"><b>Justin M.</b>Google · ★★★★★</div></div>
           <div class="qpin" data-q><div class="q">The owner is very accommodating and inviting, and makes beautiful drinks pairing fabulous entrées.</div><div class="who"><b>Fran B.</b>Google · ★★★★★</div></div>
+          <div class="qpin" data-q><div class="q">Cozy little restaurant. Excellent food and excellent drinks. Great service — we would be back again.</div><div class="who"><b>Vivian H.</b>Google · ★★★★★</div></div>
+        </div>
+        <div class="reel-dots" id="s6dots">
+          <span class="on"></span><span></span><span></span><span></span><span></span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- S7 VISIT -->
+  <!-- S7 VISIT — map finale -->
   <div class="scene s2v" id="s-visit" style="background:var(--night)">
     <div class="stage">
-      <div style="width:100%">
-        <div class="kicker" style="text-align:center">Come hungry</div>
-        <div class="big" style="text-align:center">Holmedale, after dark.</div>
-        <div class="visit-grid" style="margin:2.4rem auto 0" id="s7grid">
-          <div>
-            <div class="vtitle">Hours</div>
+      <div class="visit-bg" id="s7bg"></div>
+      <div style="position:relative;width:100%">
+        <div style="text-align:center;margin-bottom:1.6rem">
+          <div class="kicker">Come hungry</div>
+          <div class="big" style="color:var(--cream)">Holmedale, <i>after dark.</i></div>
+        </div>
+        <div class="visit-box" id="s7box">
+          <div class="vcard">
+            <div class="vtitle">Hours &amp; contact</div>
             <ul class="hours">
               <li>Wednesday <span>11:30–2 · 5–9</span></li>
               <li>Thursday <span>11:30–2 · 5–9</span></li>
               <li>Friday <span>11:30–2 · 5–10</span></li>
               <li>Saturday <span>5:00–10</span></li>
             </ul>
-            <div class="vtitle" style="margin-top:1.6rem">Contact</div>
-            <p class="vbody"><a href="tel:+15488803863">548-880-FUME (3863)</a><br /><a href="mailto:info@fumerestobar.ca">info@fumerestobar.ca</a><br />150 Morrell St, Brantford ON N3T 4K2</p>
-            <p class="vbody" style="margin-top:1rem"><a href="https://www.exploretock.com/fume-restobar-brantford" target="_blank" rel="noopener">Reservations — Explore Tock</a> · <a href="https://app.squareup.com/gift/MLHMQTWSMY8JC/order" target="_blank" rel="noopener">Gift cards</a></p>
+            <p class="vbody" style="margin-top:1rem"><a href="tel:+15488803863">548-880-FUME (3863)</a> · <a href="mailto:info@fumerestobar.ca">info@fumerestobar.ca</a><br/>150 Morrell St, Brantford ON N3T 4K2</p>
           </div>
-          <div class="mapwrap">
-            <iframe title="Fume map" loading="lazy" src="https://www.google.com/maps?q=150+Morrell+St,+Brantford,+ON+N3T+4K2&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="vcard">
+            <div class="vtitle">The table is yours</div>
+            <p class="vbody">Reservations through Explore Tock — or gift someone the evening with a Fume card.</p>
+            <a class="cta-final" href="https://www.exploretock.com/fume-restobar-brantford" target="_blank" rel="noopener">Reserve — Tock</a>
+            <a class="cta-final" style="background:transparent;border:1px solid var(--line);margin-left:.6rem" href="https://app.squareup.com/gift/MLHMQTWSMY8JC/order" target="_blank" rel="noopener">Gift cards</a>
           </div>
         </div>
       </div>
@@ -322,9 +327,7 @@
   let animate, scroll, inView;
   try { animate = Motion.animate; scroll = Motion.scroll; inView = Motion.inView; } catch (e) {}
 
-  /* — scroll-scene choreography (everything moves with the wheel) — */
   if (animate && scroll && !prefRed) {
-    /* hero: photo parallax + title settles on load */
     animate("#s0k", { opacity: [0, 1], y: [16, 0] }, { duration: .7, delay: .35, ease: "easeOut" });
     animate("#s0h", { opacity: [0, 1], y: [34, 0], letterSpacing: ["-.05em", "-.03em"] }, { duration: 1, delay: .5, ease: [0.22, 1, 0.36, 1] });
     animate("#s0t", { opacity: [0, 1], y: [12, 0] }, { duration: .9, delay: .85, ease: "easeOut" });
@@ -332,73 +335,112 @@
     animate(".hero-stats .st", { opacity: [0, 1] }, { duration: .7, delay: 1.3 });
     animate("#s0bg", { scale: [1.05, 1.16] }, { duration: 24, ease: "easeInOut", yoyo: true, repeat: Infinity });
 
-    /* S2 fire: plates pinch together then pull, copy rises */
+    /* S2 fire pinch */
     const s2 = document.querySelector("#s-fire");
     scroll(p => {
       document.getElementById("s2a").style.transform = `translateX(${-p * 300}px) scale(${1 - p * .2})`;
       document.getElementById("s2b").style.transform = `translateX(${p * 300}px) scale(${1 - p * .2})`;
-      if (p > .32) {
-        document.getElementById("s2t").style.opacity = Math.min(1, (p - .32) / .22);
-        document.getElementById("s2t").style.transform = `translateY(${(1 - Math.min(1,(p-.32)/.22)) * 40}px)`;
-      }
+      const t = Math.min(1, Math.max(0, (p - .34) / .2));
+      document.getElementById("s2t").style.opacity = t;
+      document.getElementById("s2t").style.transform = `translateY(${(1 - t) * 44}px)`;
     }, { target: s2, offset: ["start start", "end end"] });
 
-    /* S3 story: images rise from bottom, text crosses in */
+    /* S3 story rise + cross */
     const s3 = document.querySelector("#s-story");
     scroll(p => {
-      const {
-        i1 = document.getElementById("s3i1"), i2 = document.getElementById("s3i2")
-      } = {};
-      document.getElementById("s3i1").style.transform = `translateY(${(1 - p) * 120}px)`;
-      document.getElementById("s3i2").style.transform = `translateY(${(1 - p * 1.35) * 160}px)`;
-      document.getElementById("s3txt").style.transform = `translateX(${(1 - Math.min(1, p * 1.6)) * 60}px)`;
-      document.getElementById("s3txt").style.opacity = Math.min(1, p * 1.8);
+      document.getElementById("s3i1").style.transform = `translateY(${(1 - p) * 130}px)`;
+      document.getElementById("s3i2").style.transform = `translateY(${(1 - p * 1.4) * 170}px)`;
+      const t = Math.min(1, p * 1.7);
+      document.getElementById("s3txt").style.transform = `translateX(${(1 - t) * 70}px)`;
+      document.getElementById("s3txt").style.opacity = t;
     }, { target: s3, offset: ["start start", "end end"] });
 
-    /* S4 menu: sheet slides up + items stagger */
+    /* S4 menu read sweep: bg pans, sheet tilts in, rows sweep L->R, ox bars grow */
     const s4 = document.querySelector("#s-menu");
+    const items4 = document.querySelectorAll("#s4sheet .mitem");
     scroll(p => {
-      document.getElementById("s4sheet").style.transform = `translateY(${(1 - Math.min(1, p * 1.4)) * 120}px) scale(${.94 + Math.min(1, p * 1.4) * .06})`;
-      document.querySelectorAll("#s4sheet .mitem").forEach((m, i) => {
-        m.style.opacity = Math.min(1, Math.max(0, (p - .25 - i * .05) / .12));
-        m.style.transform = `translateY(${(1 - Math.min(1, Math.max(0, (p - .25 - i * .05) / .12))) * 30}px)`;
+      document.getElementById("s4bg").style.transform = `translateX(${p * -240}px) scale(1.2)`;
+      const enter = Math.min(1, p * 1.3);
+      document.getElementById("s4sheet").style.transform =
+        `translateY(${(1 - enter) * 130}px) scale(${.92 + enter * .08}) rotateX(${(1 - enter) * 12}deg)`;
+      items4.forEach((m, i) => {
+        const k = Math.min(1, Math.max(0, (p - .3 - i * .07) / .12));
+        m.style.transform = `translateX(${(1 - k) * 480}px)`;
+        m.style.opacity = k;
+      });
+      itemBars(p);
+      /* price pop */
+      items4.forEach((m, i) => {
+        const pr = m.querySelector(".pr");
+        const k = Math.min(1, Math.max(0, (p - .34 - i * .07) / .1));
+        if (pr) pr.style.transform = `translateX(${(1 - k) * 40}px)` ;
       });
     }, { target: s4, offset: ["start start", "end end"] });
+    function itemBars(p) {
+      items4.forEach((m, i) => {
+        const k = Math.min(1, Math.max(0, (p - .36 - i * .07) / .08));
+        m.style.setProperty("--bar", k);
+        m.style.background = `linear-gradient(90deg, rgba(149,1,1,${k * .12}), transparent ${k * 22}%)`;
+      });
+    }
 
-    /* S5 room: horizontal drift */
+    /* S5 room: longer drift + fade out clean */
     const s5 = document.querySelector("#s-room");
-    const drift = document.getElementById("s5drift");
     scroll(p => {
-      drift.style.transform = `translateX(${-p * 2400}px)`;
+      const driftEl = document.getElementById("s5drift");
+      const total = 3200;
+      const move = Math.min(1, p / .82);
+      driftEl.style.transform = `translateX(${-move * total}px)`;
+      const out = Math.min(1, Math.max(0, (p - .84) / .16));
+      driftEl.style.opacity = 1 - out;
+      driftEl.style.scale = 1 - out * .08;
+      document.getElementById("s5end").style.opacity = p > .62 ? Math.min(1, (p - .62) / .15) : 0;
     }, { target: s5, offset: ["start start", "end end"] });
 
-    /* S6 praise: quotes turn, rating counts */
+    /* S6 praise: iOS reel — quotes rotate in one at a time */
     const s6 = document.querySelector("#s-praise");
+    const quotes6 = document.querySelectorAll("#s6reel .qpin");
+    const dots = document.querySelectorAll("#s6dots span");
+    const N = quotes6.length;
     scroll(p => {
-      const idx = Math.min(3, Math.floor(p * 3.4));
-      document.querySelectorAll("#s6quotes .qpin").forEach((q, i) => {
-        q.style.opacity = i === idx ? 1 : .12;
-        q.style.transform = i === idx ? "translateY(0)" : `translateY(${(i - idx) * 26}px)`;
+      const idx = Math.min(N - 1, Math.floor(p * N));
+      quotes6.forEach((q, i) => {
+        const d = i - idx;
+        let tr = `translateY(${d * 22}px)`;
+        let o = 1;
+        let r = "translateZ(0)";
+        if (i === idx) {
+          const t = Math.min(1, Math.max(0, (p * N - idx) * 6)); /* 0..1 across the beat */
+          r = `rotateX(${(1 - t) * 42}deg)`;
+          o = Math.min(1, Math.max(.1, t + .4));
+        } else if (d === 1) {
+          o = .08; tr = `translateY(26px) scale(.96)`;
+        } else if (d === -1) {
+          o = .14; tr = `translateY(-26px) scale(.97)`;
+        } else {
+          o = 0;
+        }
+        q.style.opacity = o;
+        q.style.transform = `${tr} ${r}`;
       });
+      dots.forEach((d, i) => d.classList.toggle("on", i === idx));
     }, { target: s6, offset: ["start start", "end end"] });
     inView("#s6r", () => animate(0, 4.6, { duration: 1.6, ease: "easeOut", onUpdate: v => { document.getElementById("s6r").textContent = v.toFixed(1); } }), { amount: .6 });
 
-    /* S7 visit: map rises */
+    /* S7 visit: bg drifts, cards rise */
     const s7 = document.querySelector("#s-visit");
     scroll(p => {
-      document.getElementById("s7grid").style.transform = `translateY(${(1 - Math.min(1, p * 1.3)) * 90}px)`;
-      document.getElementById("s7grid").style.opacity = Math.min(1, p * 1.6);
+      document.getElementById("s7bg").style.transform = `translateY(${p * 200}px) scale(1.25)`;
+      const t = Math.min(1, p * 1.4);
+      document.getElementById("s7box").style.transform = `translateY(${(1 - t) * 100}px)`;
+      document.getElementById("s7box").style.opacity = t;
     }, { target: s7, offset: ["start start", "end end"] });
 
-    /* hero stats counters */
-    inView("[data-count]", (el) => {
+    inView("[data-count]", el => {
       const end = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec || "0");
       animate(0, end, { duration: 1.8, ease: "easeOut", onUpdate: v => { el.textContent = v.toFixed(dec); } });
       return () => {};
     }, { amount: .5 });
-  } else {
-    /* static fallback: unhide everything */
-    document.querySelectorAll(".stage [style*='opacity']").forEach(e => e.style.opacity = 1);
   }
 </script>
 </body>
