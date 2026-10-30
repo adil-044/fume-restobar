@@ -179,10 +179,10 @@
     <p class="sub">Smoked pork belly with honey dijon &mdash; steak frites under cowboy butter &mdash; whipped feta with spicy bomba honey. Poured at the bar, playing reggae after dark.</p>
     <div class="acts"><a href="https://www.exploretock.com/fume-restobar-brantford" target="_blank" rel="noopener">Reserve</a><a href="#menu">The menu</a></div>
     <div class="stats">
-      <div class="st"><b>4.6</b><span>Google rating</span></div>
-      <div class="st"><b>518</b><span>Reviews</span></div>
-      <div class="st"><b>Fire</b><span>Kitchen</span></div>
-      <div class="st"><b>Wine</b><span>Cocktails</span></div>
+      <div class="st"><b data-count="4.6" data-dec="1">4.6</b><span>Google rating</span></div>
+      <div class="st"><b data-count="518">518</b><span>Reviews</span></div>
+      <div class="st" data-live><b>Fire</b><span>Kitchen</span></div>
+      <div class="st" data-live><b>Wine</b><span>Cocktails</span></div>
     </div>
     <div class="hint"></div>
   </div>
@@ -333,6 +333,7 @@
 
 <div id="lb"><span class="x" id="lbclose">×</span><img id="lbimg" src="" alt="" /></div>
 
+<script src="assets/motion.min.js"></script>
 <script>
   addEventListener("load", () => setTimeout(() => {
     const p = document.getElementById("preload");
@@ -360,6 +361,43 @@
   }));
   document.getElementById("lbclose").addEventListener("click", () => lb.style.display = "none");
   lb.addEventListener("click", () => lb.style.display = "none");
+
+  /* ——— Motion layer (local lib, vanilla, no CDN) ——— */
+  try {
+    const { animate, spring } = Motion;
+    const prefRed = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!prefRed) {
+      /* stat count-ups — 4.6 / 518 */
+      document.querySelectorAll("[data-count]").forEach(el => {
+        const end = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec || "0");
+        animate(0, end, { duration: 1.8, ease: "easeOut",
+          onUpdate: v => { el.textContent = v.toFixed(dec); } });
+      });
+      /* magnetic reserve buttons (fine pointers only) */
+      if (matchMedia("(pointer: fine)").matches) {
+        document.querySelectorAll(".reserve").forEach(btn => {
+          btn.addEventListener("pointermove", e => {
+            const r = btn.getBoundingClientRect();
+            animate(btn, { x: (e.clientX - r.left - r.width / 2) * .25,
+                           y: (e.clientY - r.top - r.height / 2) * .35 },
+                           { type: "spring", stiffness: 260, damping: 18, duration: .45 });
+          });
+          btn.addEventListener("pointerleave", () =>
+            animate(btn, { x: 0, y: 0 }, { type: "spring", stiffness: 220, damping: 16, duration: .5 }));
+        });
+      }
+      /* gallery lift on hover */
+      document.querySelectorAll(".gal figure").forEach(f => {
+        f.addEventListener("pointerenter", () =>
+          animate(f, { y: -6 }, { type: "spring", stiffness: 300, damping: 20, duration: .4 }));
+        f.addEventListener("pointerleave", () =>
+          animate(f, { y: 0 }, { type: "spring", stiffness: 260, damping: 18, duration: .45 }));
+      });
+      /* live pills pulse (Fire / Wine) */
+      document.querySelectorAll("[data-live] b").forEach(b =>
+        animate(b, { scale: [1, 1.06, 1] }, { duration: 2.4, repeat: Infinity, ease: "easeInOut" }));
+    }
+  } catch (e) { /* Motion unavailable — site stays fully functional */ }
 </script>
 </body>
 </html>
